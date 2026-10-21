@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ui-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ui-deployment
+  template:
+    metadata:
+      labels:
+        app: ui-deployment
+    spec:
+      containers:
+      - name: ui-deployment
+        image: acraxiondev12345678.azurecr.io/ui:v1 
+        imagePullPolicy: Always
+        
+        ports:
+        - containerPort: 80
